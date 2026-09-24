@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Luiz Savoldi | Personal trainer em Florianópolis</title>
+<meta name="description" content="Personal trainer no Centro de Florianópolis. Treino individual para saúde, hipertrofia e emagrecimento, presencial, ao ar livre ou por consultoria online. Nota 5,0 no Google.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#0A0A0A;color:#F7F5F2;overflow-x:hidden;max-width:100%;overscroll-behavior-x:none;scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{font-family:'Archivo',Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#F7F5F2;text-decoration:none}
+a:hover{color:#F03922}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Luiz Savoldi Personal Trainer","description":"Personal trainer em Florianópolis com treinos para saúde, hipertrofia e emagrecimento. Atendimento presencial, ao ar livre e consultoria online.","image":"assets/luiz-savoldi.png","telephone":"+55 46 99981-3405","priceRange":"Sob consulta","address":{"@type":"PostalAddress","streetAddress":"R. Francisco Tolentino, 800, Condomínio do Edifício Residencial Mirante do Cais","addressLocality":"Florianópolis","addressRegion":"SC","postalCode":"88010-200","addressCountry":"BR"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday"],"opens":"05:30","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"05:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"opens":"08:00","closes":"20:00"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"25","bestRating":"5"},"employee":{"@type":"Person","name":"Luiz Alexandre Savoldi","jobTitle":"Personal trainer","hasCredential":"Certificado Internacional de Personal Trainer WTTC"}}
+</script>
+</helmet>
+
+<div style="background:#0A0A0A;color:#F7F5F2;min-height:100vh;width:100%;overflow-x:hidden;position:relative">
+
+<!-- HEADER -->
+<header style="position:fixed;top:0;left:0;right:0;z-index:40;background:{{ headerBg }};transition:background .3s ease">
+  <div style="max-width:1380px;margin:0 auto;height:{{ headerH }};padding:0 clamp(20px,4vw,48px);display:flex;align-items:center;justify-content:space-between;gap:24px">
+    <a href="#inicio" aria-label="Luiz Savoldi, início" style="font-size:15px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;display:flex;gap:6px;color:#F7F5F2">
+      <span>Luiz</span><span style="color:#E52C18">Savoldi</span>
+    </a>
+    <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+      <nav aria-label="Principal" style="display:flex;align-items:center;gap:clamp(20px,2.6vw,40px)">
+        <a href="#sobre" style="font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase">Sobre</a>
+        <a href="#acompanhamento" style="font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase">Acompanhamento</a>
+        <a href="#online" style="font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase">Online</a>
+        <a href="#depoimentos" style="font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase">Alunos</a>
+        <a href="#contato" style="font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase">Contato</a>
+      </nav>
+      <div style="display:flex;align-items:center;gap:20px">
+        <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram do Luiz Savoldi" style="display:flex;color:#F7F5F2">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"></path></svg>
+        </a>
+        <a href="https://wa.me/5547992754013?text=Ol%C3%A1!%20Vi%20o%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20acompanhamento%20com%20o%20Luiz." target="_blank" rel="noopener" style="height:42px;padding:0 20px;background:#E52C18;color:#FFFFFF;display:flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:.2s ease" style-hover="background:#F03922;color:#FFFFFF;transform:translateY(-2px)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
+          <span>Falar com o Luiz</span>
+        </a>
+      </div>
+    </sc-if>
+    <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+      <button type="button" onClick="{{ openMenu }}" aria-label="Abrir menu" aria-expanded="{{ menuOpen }}" style="width:44px;height:44px;background:transparent;border:1px solid #282828;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer;padding:0">
+        <span style="width:18px;height:2px;background:#F7F5F2;display:block"></span>
+        <span style="width:18px;height:2px;background:#F7F5F2;display:block"></span>
+      </button>
+    </sc-if>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+  <div role="dialog" aria-label="Menu" style="position:fixed;inset:0;z-index:60;background:#0A0A0A;display:flex;flex-direction:column;padding:0 20px 32px">
+    <div style="height:64px;display:flex;align-items:center;justify-content:space-between">
+      <span style="font-size:15px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;display:flex;gap:6px"><span>Luiz</span><span style="color:#E52C18">Savoldi</span></span>
+      <button type="button" onClick="{{ closeMenu }}" aria-label="Fechar menu" style="width:44px;height:44px;background:transparent;border:1px solid #282828;color:#F7F5F2;font-size:24px;line-height:1;cursor:pointer;font-family:inherit">×</button>
+    </div>
+    <nav aria-label="Menu mobile" style="display:flex;flex-direction:column;margin-top:32px;border-top:1px solid #282828">
+      <a href="#sobre" onClick="{{ closeMenu }}" style="padding:20px 0;border-bottom:1px solid #282828;font-size:30px;font-weight:800;font-stretch:75%;text-transform:uppercase;letter-spacing:-.01em;display:flex;justify-content:space-between"><span>Sobre</span><span style="color:#E52C18">→</span></a>
+      <a href="#acompanhamento" onClick="{{ closeMenu }}" style="padding:20px 0;border-bottom:1px solid #282828;font-size:30px;font-weight:800;font-stretch:75%;text-transform:uppercase;letter-spacing:-.01em;display:flex;justify-content:space-between"><span>Acompanhamento</span><span style="color:#E52C18">→</span></a>
+      <a href="#online" onClick="{{ closeMenu }}" style="padding:20px 0;border-bottom:1px solid #282828;font-size:30px;font-weight:800;font-stretch:75%;text-transform:uppercase;letter-spacing:-.01em;display:flex;justify-content:space-between"><span>Consultoria online</span><span style="color:#E52C18">→</span></a>
+      <a href="#depoimentos" onClick="{{ closeMenu }}" style="padding:20px 0;border-bottom:1px solid #282828;font-size:30px;font-weight:800;font-stretch:75%;text-transform:uppercase;letter-spacing:-.01em;display:flex;justify-content:space-between"><span>Alunos</span><span style="color:#E52C18">→</span></a>
+      <a href="#contato" onClick="{{ closeMenu }}" style="padding:20px 0;border-bottom:1px solid #282828;font-size:30px;font-weight:800;font-stretch:75%;text-transform:uppercase;letter-spacing:-.01em;display:flex;justify-content:space-between"><span>Contato</span><span style="color:#E52C18">→</span></a>
+    </nav>
+    <div style="margin-top:auto;display:flex;gap:12px">
+      <a href="https://wa.me/5547992754013?text=Ol%C3%A1!%20Vi%20o%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20acompanhamento%20com%20o%20Luiz." target="_blank" rel="noopener" style="flex:1;height:52px;background:#E52C18;color:#FFFFFF;display:flex;align-items:center;justify-content:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
+        <span>Falar com o Luiz</span>
+      </a>
+      <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram do Luiz Savoldi" style="width:52px;height:52px;border:1px solid #282828;display:flex;align-items:center;justify-content:center;color:#F7F5F2">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"></path></svg>
+      </a>
+    </div>
+  </div>
+</sc-if>
+
+<main>
+
+<!-- HERO DESKTOP -->
+<sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+<section id="inicio" data-screen-label="Hero" style="position:relative;height:90vh;min-height:760px;max-height:950px;overflow:hidden;background:#0A0A0A">
+  <div aria-hidden="true" style="position:absolute;left:-1vw;bottom:-2vw;font-size:clamp(160px,19vw,300px);font-weight:900;font-stretch:80%;line-height:.7;letter-spacing:-.05em;text-transform:uppercase;color:rgba(247,245,242,.035);white-space:nowrap;pointer-events:none;z-index:0">Savoldi</div>
+  <div style="position:relative;z-index:1;max-width:1380px;height:100%;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:24px">
+    <div style="align-self:end;padding-bottom:clamp(64px,9vh,112px);display:flex;flex-direction:column;gap:24px;max-width:620px">
+      <p style="margin:0;display:flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#E52C18"><span style="width:6px;height:6px;border-radius:50%;background:#E52C18;display:block"></span>Personal trainer em Florianópolis</p>
+      <h1 style="margin:0;font-size:clamp(56px,6.4vw,96px);font-weight:800;font-stretch:72%;line-height:.88;letter-spacing:-.025em;text-transform:uppercase;color:#F7F5F2;text-wrap:balance">Treino individual com execução no detalhe</h1>
+      <p style="margin:0;font-size:16px;line-height:1.6;color:#948E89;max-width:470px;text-wrap:pretty">Saúde, hipertrofia e emagrecimento com acompanhamento de perto. Presencial no Centro, ao ar livre ou online.</p>
+      <div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap;margin-top:8px">
+        <a href="https://wa.me/5547992754013?text=Ol%C3%A1!%20Vi%20o%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20acompanhamento%20com%20o%20Luiz." target="_blank" rel="noopener" style="height:52px;padding:0 26px;background:#E52C18;color:#FFFFFF;display:flex;align-items:center;gap:12px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:.2s ease" style-hover="background:#F03922;color:#FFFFFF;transform:translateY(-2px)"><span>Quero treinar com o Luiz</span><span>→</span></a>
+        <a href="#acompanhamento" style="color:#A49E99;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;display:flex;gap:10px" style-hover="color:#F7F5F2"><span>Como funciona</span><span>→</span></a>
+      </div>
+    </div>
+    <div style="position:relative;height:100%;padding-top:88px">
+      <img src="assets/luiz-savoldi.png" alt="Luiz Savoldi, personal trainer, de braços cruzados em uma academia em Florianópolis" style="width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block;filter:contrast(1.06) saturate(.92);clip-path:inset(4px 4px 0 4px)">
+      <div style="position:absolute;left:-96px;bottom:clamp(56px,8vh,96px);display:flex;gap:12px;z-index:2">
+        <div style="width:190px;height:160px;padding:22px;background:rgba(30,10,8,.88);backdrop-filter:blur(12px);border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.35);display:flex;flex-direction:column;justify-content:space-between">
+          <span style="font-size:54px;font-weight:300;letter-spacing:-.05em;line-height:1">5,0</span>
+          <span style="font-size:12px;line-height:1.3;color:#C9C3BE">Nota no Google, com 25 avaliações de alunos</span>
+        </div>
+        <div style="width:190px;height:160px;padding:22px;background:#E52C18;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.35);display:flex;flex-direction:column;justify-content:space-between">
+          <span style="font-size:54px;font-weight:300;letter-spacing:-.05em;line-height:1">WTTC</span>
+          <span style="font-size:12px;line-height:1.3;color:#FFFFFF">Certificado internacional de personal trainer</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<!-- HERO MOBILE -->
+<sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+<section id="inicio" data-screen-label="Hero mobile" style="position:relative;min-height:100svh;padding:104px 20px calc(112px + env(safe-area-inset-bottom));background:#0A0A0A;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden">
+  <img src="assets/luiz-savoldi.png" alt="Luiz Savoldi, personal trainer, de braços cruzados em uma academia em Florianópolis" style="position:absolute;inset:-4px -4px 0 -4px;width:calc(100% + 8px);height:calc(100% + 4px);object-fit:cover;object-position:50% 15%;display:block;z-index:0">
+  <div aria-hidden="true" style="position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(10,10,10,.55) 0%,rgba(10,10,10,0) 22%,rgba(10,10,10,.25) 45%,rgba(10,10,10,.88) 70%,#0A0A0A 100%)"></div>
+  <div style="position:relative;z-index:2;display:flex;flex-direction:column;gap:20px">
+    <p style="margin:0;display:flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#E52C18"><span style="width:6px;height:6px;border-radius:50%;background:#E52C18;display:block"></span>Personal trainer em Florianópolis</p>
+    <h1 style="margin:0;font-size:46px;font-weight:800;font-stretch:72%;line-height:.9;letter-spacing:-.02em;text-transform:uppercase;color:#F7F5F2">Treino individual com execução no detalhe</h1>
+    <p style="margin:0;font-size:15px;line-height:1.6;color:#D6D1CC">Saúde, hipertrofia e emagrecimento com acompanhamento de perto.</p>
+    <a href="https://wa.me/5547992754013?text=Ol%C3%A1!%20Vi%20o%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20acompanhamento%20com%20o%20Luiz." target="_blank" rel="noopener" style="height:52px;background:#E52C18;color:#FFFFFF;display:flex;align-items:center;justify-content:center;gap:12px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-top:4px"><span>Quero treinar com o Luiz</span><span>→</span></a>
+  </div>
+</section>
+</sc-if>
+
+<!-- CREDIBILIDADE -->
+<section aria-label="Credenciais" data-screen-label="Credibilidade" style="background:#090909;border-top:1px solid #1C1C1C;border-bottom:1px solid #1C1C1C">
+  <div style="max-width:1380px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))">
+    <div style="padding:32px 24px 32px 0;border-right:1px solid #1C1C1C;display:flex;flex-direction:column;gap:8px">
+      <span style="font-size:36px;font-weight:300;letter-spacing:-.04em;line-height:1">5,0</span>
+      <span style="font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#88827E">Nota no Google</span>
+    </div>
+    <div style="padding:32px 24px;border-right:1px solid #1C1C1C;display:flex;flex-direction:column;gap:8px">
+      <span style="font-size:36px;font-weight:300;letter-spacing:-.04em;line-height:1">25</span>
+      <span style="font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#88827E">Avaliações de alunos</span>
+    </div>
+    <div style="padding:32px 24px;border-right:1px solid #1C1C1C;display:flex;flex-direction:column;gap:8px">
+      <span style="font-size:36px;font-weight:300;letter-spacing:-.04em;line-height:1">Presencial e online</span>
+      <span style="font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#88827E">Também ao ar livre</span>
+    </div>
+    <div style="padding:32px 24px;display:flex;flex-direction:column;gap:8px">
+      <span style="font-size:36px;font-weight:300;letter-spacing:-.04em;line-height:1">WTTC</span>
+      <span style="font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#88827E">Formação internacional</span>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section id="depoimentos" data-screen-label="Depoimentos" style="background:#090909;padding:clamp(72px,10vw,128px) 0">
+  <div style="max-width:1380px;margin:0 auto;padding:0 clamp(20px,4vw,48px)">
+    <div data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:32px;align-items:end">
+      <div>
+        <p style="margin:0;display:flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#E52C18"><span style="width:6px;height:6px;border-radius:50%;background:#E52C18;display:block"></span>Quem treina com o Luiz</p>
+        <h2 style="margin:16px 0 0;font-size:clamp(40px,4.8vw,68px);font-weight:800;font-stretch:75%;line-height:.92;letter-spacing:-.02em;text-transform:uppercase;text-wrap:balance">Palavra de aluno</h2>
+      </div>
+      <div style="display:flex;align-items:center;gap:20px;justify-self:start">
+        <span style="font-size:clamp(64px,7vw,96px);font-weight:300;letter-spacing:-.05em;line-height:.9">5,0</span>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <span aria-hidden="true" style="color:#E52C18;font-size:18px;letter-spacing:4px">★★★★★</span>
+          <span style="font-size:13px;color:#88827E;line-height:1.4">25 avaliações públicas no Google</span>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:0">
+      <figure data-reveal="" style="margin:0;background:#111111;padding:34px;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;gap:32px;border-right:1px solid #29201E">
+        <div>
+          <span aria-hidden="true" style="font-size:56px;line-height:.6;color:#E52C18;font-weight:800;display:block;height:28px">“</span>
+          <blockquote style="margin:16px 0 0;font-size:20px;line-height:1.35;font-weight:500;letter-spacing:-.01em;text-wrap:pretty">Meu corpo mudou, minha disposição melhorou, e agora treino com segurança e motivação.</blockquote>
+        </div>
+        <figcaption style="display:flex;flex-direction:column;gap:6px;border-top:1px solid #612219;padding-top:16px">
+          <span style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Mayara Delonzek</span>
+          <span style="font-size:12px;color:#88827E">Aluna, avaliação no Google</span>
+        </figcaption>
+      </figure>
+      <figure data-reveal="" style="margin:0;background:#E52C18;padding:34px;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;gap:32px">
+        <div>
+          <span aria-hidden="true" style="font-size:56px;line-height:.6;color:#FFFFFF;font-weight:800;display:block;height:28px">“</span>
+          <blockquote style="margin:16px 0 0;font-size:clamp(30px,3vw,40px);line-height:1;font-weight:800;font-stretch:75%;letter-spacing:-.02em;text-transform:uppercase;color:#FFFFFF">o Luiz é um profissional fora da curva</blockquote>
+        </div>
+        <figcaption style="display:flex;flex-direction:column;gap:6px;border-top:1px solid rgba(255,255,255,.25);padding-top:16px">
+          <span style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#FFFFFF">Tio Ruy</span>
+          <span style="font-size:12px;color:rgba(255,255,255,.8)">Aluno, avaliação no Google</span>
+        </figcaption>
+      </figure>
+      <figure data-reveal="" style="margin:0;background:#111111;padding:34px;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;gap:32px">
+        <div>
+          <span aria-hidden="true" style="font-size:56px;line-height:.6;color:#E52C18;font-weight:800;display:block;height:28px">“</span>
+          <blockquote style="margin:16px 0 0;font-size:20px;line-height:1.35;font-weight:500;letter-spacing:-.01em;text-wrap:pretty">Realmente comprometido com a evolução dos seus alunos, ele se realiza nisso.</blockquote>
+        </div>
+        <figcaption style="display:flex;flex-direction:column;gap:6px;border-top:1px solid #612219;padding-top:16px">
+          <span style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">André Romero de Carvalho Lima</span>
+          <span style="font-size:12px;color:#88827E">Aluno, avaliação no Google</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre" data-screen-label="Sobre" style="background:#0A0A0A;padding:clamp(72px,10vw,128px) 0;border-top:1px solid #1C1C1C">
+  <div style="max-width:1380px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(40px,6vw,96px)">
+    <div data-reveal="">
+      <p style="margin:0;display:flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#E52C18"><span style="width:6px;height:6px;border-radius:50%;background:#E52C18;display:block"></span>Sobre o Luiz</p>
+      <h2 style="margin:16px 0 0;font-size:clamp(56px,8vw,120px);font-weight:800;font-stretch:70%;line-height:.86;letter-spacing:-.03em;text-transform:uppercase">Luiz<br>Savoldi</h2>
+      <p style="margin:20px 0 0;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#88827E">Coach, personal trainer e maratonista</p>
+    </div>
+    <div data-reveal="" style="display:flex;flex-direction:column;gap:20px;max-width:560px">
+      <p style="margin:0;font-size:19px;line-height:1.5;color:#F7F5F2;text-wrap:pretty">Luiz é coach e personal trainer em Florianópolis, com Certificado Internacional de Personal Trainer pela WTTC. Trabalha com treinos para saúde, hipertrofia e emagrecimento, sempre a partir da rotina e do objetivo de cada aluno.</p>
+      <p style="margin:0;font-size:15px;line-height:1.7;color:#948E89;text-wrap:pretty">Boa parte do trabalho está nos detalhes: posição, amplitude, ritmo, respiração. É isso que ele corrige de perto durante o treino e é isso que ele explica no conteúdo que publica no Instagram.</p>
+      <p style="margin:0;font-size:15px;line-height:1.7;color:#948E89;text-wrap:pretty">Fora da musculação, Luiz corre. Como maratonista, sabe na prática o que é construir resistência com constância, e leva essa experiência para quem treina com ele.</p>
+      <div style="margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));border-top:1px solid #282828">
+        <div style="padding:18px 0;border-bottom:1px solid #282828;display:flex;gap:14px;align-items:baseline"><span style="font-size:11px;font-weight:700;letter-spacing:.15em;color:#D73322">01</span><span style="font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase">Certificação WTTC</span></div>
+        <div style="padding:18px 0;border-bottom:1px solid #282828;display:flex;gap:14px;align-items:baseline"><span style="font-size:11px;font-weight:700;letter-spacing:.15em;color:#D73322">02</span><span style="font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase">Maratonista</span></div>
+        <div style="padding:18px 0;border-bottom:1px solid #282828;display:flex;gap:14px;align-items:baseline"><span style="font-size:11px;font-weight:700;letter-spacing:.15em;color:#D73322">03</span><span style="font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase">Presencial e ao ar livre</span></div>
+        <div style="padding:18px 0;border-bottom:1px solid #282828;display:flex;gap:14px;align-items:baseline"><span style="font-size:11px;font-weight:700;letter-spacing:.15em;color:#D73322">04</span><span style="font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase">Consultoria online</span></div>
+      </div>
+      <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Ver conteúdo do Luiz no Instagram" style="margin-top:12px;display:flex;align-items:center;gap:12px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#F7F5F2;align-self:flex-start" style-hover="color:#F03922">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"></path></svg>
+        <span>Conteúdo no Instagram</span><span>→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ACOMPANHAMENTO -->
+<section id="acompanhamento" data-screen-label="Acompanhamento" style="background:#090909;padding:clamp(72px,10vw,128px) 0;border-top:1px solid #1C1C1C">
+  <div style="max-width:1380px;margin:0 auto;padding:0 clamp(20px,4vw,48px)">
+    <div data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:32px;align-items:end">
+      <div>
+        <p style="margin:0;display:flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#E52C18"><span style="width:6px;height:6px;border-radius:50%;background:#E52C18;display:block"></span>Acompanhamento personalizado</p>
+        <h2 style="margin:16px 0 0;font-size:clamp(40px,4.8vw,68px);font-weight:800;font-stretch:75%;line-height:.92;letter-spacing:-.02em;text-transform:uppercase;text-wrap:balance">O treino começa pelo seu objetivo</h2>
+      </div>
+      <p style="margin:0;font-size:15px;line-height:1.7;color:#948E89;max-width:460px;text-wrap:pretty">Não existe planilha pronta. Cada treino parte do que você quer alcançar, da sua rotina e de como o seu corpo responde a cada semana.</p>
+    </div>
+    <div style="margin-top:56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:0;border-top:1px solid #762219">
+      <div data-reveal="" style="padding:32px 32px 32px 0;display:flex;flex-direction:column;gap:18px;border-right:1px solid #1C1C1C">
+        <span style="font-size:11px;font-weight:700;letter-spacing:.15em;color:#D73322">01</span>
+        <h3 style="margin:0;font-size:22px;font-weight:750;line-height:1.05;letter-spacing:-.01em;text-transform:uppercase">Seu objetivo define o plano</h3>
+        <p style="margin:0;font-size:15px;line-height:1.65;color:#948E89;max-width:320px">Saúde, força, estética ou voltar a treinar sem desconforto. O que você busca orienta a escolha de cada exercício.</p>
+      </div>
+      <div data-reveal="" style="padding:32px;display:flex;flex-direction:column;gap:18px;border-right:1px solid #1C1C1C">
+        <span style="font-size:11px;font-weight:700;letter-spacing:.15em;color:#D73322">02</span>
+        <h3 style="margin:0;font-size:22px;font-weight:750;line-height:1.05;letter-spacing:-.01em;text-transform:uppercase">Execução corrigida de perto</h3>
+        <p style="margin:0;font-size:15px;line-height:1.65;color:#948E89;max-width:320px">Postura, amplitude e controle do movimento acompanhados em cada série. Treinar certo vem antes de treinar pesado.</p>
+      </div>
+      <div data-reveal="" style="padding:32px;display:flex;flex-direction:column;gap:18px">
+        <span style="font-size:11px;font-weight:700;letter-spacing:.15em;color:#D73322">03</span>
+        <h3 style="margin:0;font-size:22px;font-weight:750;line-height:1.05;letter-spacing:-.01em;text-transform:uppercase">Evolução com segurança</h3>
+        <p style="margin:0;font-size:15px;line-height:1.65;color:#948E89;max-width:320px">Carga e volume avançam conforme você responde ao treino. Progresso consistente, sem pular etapas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OBJETIVOS -->
+<section id="objetivos" data-screen-label="Objetivos" style="background:#0A0A0A;padding:clamp(72px,10vw,128px) 0;border-top:1px solid #1C1C1C">
+  <div style="max-width:1380px;margin:0 auto;padding:0 clamp(20px,4vw,48px)">
+    <div data-reveal="">
+      <p style="margin:0;display:flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#E52C18"><span style="width:6px;height:6px;border-radius:50%;background:#E52C18;display:block"></span>Objetivos de treino</p>
+      <h2 style="margin:16px 0 0;font-size:clamp(40px,4.8vw,68px);font-weight:800;font-stretch:75%;line-height:.92;letter-spacing:-.02em;text-transform:uppercase;text-wrap:balance;max-width:820px">Três caminhos, o mesmo cuidado</h2>
+    </div>
+    <div style="margin-top:48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:0">
+      <article data-reveal="" style="background:#111111;padding:34px;min-height:320px;display:flex;flex-direction:column;gap:18px;border-right:1px solid #29201E">
+        <span style="font-size:11px;font-weight:700;letter-spacing:.15em;color:#D73322">01</span>
+        <span style="height:1px;background:#612219;display:block"></span>
+        <h3 style="margin:8px 0 0;font-size:clamp(32px,3vw,44px);font-weight:800;font-stretch:75%;line-height:.95;letter-spacing:-.02em;text-transform:uppercase">Saúde</h3>
+        <p style="margin:0;font-size:15px;line-height:1.65;color:#948E89;max-width:300px">Fortalecimento para o dia a dia, mais disposição e um corpo que aguenta a rotina com menos desconforto.</p>
+        <a href="https://wa.me/5547992754013?text=Ol%C3%A1!%20Vi%20o%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20acompanhamento%20com%20o%20Luiz." target="_blank" rel="noopener" style="margin-top:auto;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#D93625;display:flex;gap:10px" style-hover="color:#F03922"><span>Falar sobre esse objetivo</span><span>→</span></a>
+      </article>
+      <article data-reveal="" style="background:#E52C18;padding:34px;min-height:320px;display:flex;flex-direction:column;gap:18px">
+        <span style="font-size:11px;font-weight:700;letter-spacing:.15em;color:#FFFFFF">02</span>
+        <span style="height:1px;background:rgba(255,255,255,.3);display:block"></span>
+        <h3 style="margin:8px 0 0;font-size:clamp(32px,3vw,44px);font-weight:800;font-stretch:75%;line-height:.95;letter-spacing:-.02em;text-transform:uppercase;color:#FFFFFF">Hipertrofia</h3>
+        <p style="margin:0;font-size:15px;line-height:1.65;color:#FFFFFF;max-width:300px">Ganho de massa muscular com técnica. Escolha de exercícios, cadência e progressão de carga pensadas para você crescer sem se machucar.</p>
+        <a href="https://wa.me/5547992754013?text=Ol%C3%A1!%20Vi%20o%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20acompanhamento%20com%20o%20Luiz." target="_blank" rel="noopener" style="margin-top:auto;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#FFFFFF;display:flex;gap:10px" style-hover="color:#FFFFFF;opacity:.8"><span>Falar sobre esse objetivo</span><span>→</span></a>
+      </article>
+      <article data-reveal="" style="background:#111111;padding:34px;min-height:320px;display:flex;flex-direction:column;gap:18px">
+        <span style="font-size:11px;font-weight:700;letter-spacing:.15em;color:#D73322">03</span>
+        <span style="height:1px;background:#612219;display:block"></span>
+        <h3 style="margin:8px 0 0;font-size:clamp(32px,3vw,44px);font-weight:800;font-stretch:75%;line-height:.95;letter-spacing:-.02em;text-transform:uppercase">Emagrecimento</h3>
+        <p style="margin:0;font-size:15px;line-height:1.65;color:#948E89;max-width:300px">Força e condicionamento combinados dentro da sua rotina, para perder gordura mantendo músculo e energia.</p>
+        <a href="https://wa.me/5547992754013?text=Ol%C3%A1!%20Vi%20o%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20acompanhamento%20com%20o%20Luiz." target="_blank" rel="noopener" style="margin-top:auto;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#D93625;display:flex;gap:10px" style-hover="color:#F03922"><span>Falar sobre esse objetivo</span><span>→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ONLINE -->
+<section id="online" data-screen-label="Consultoria online" style="background:#101010;padding:clamp(72px,10vw,128px) 0">
+  <div style="max-width:1380px;margin:0 auto;padding:0 clamp(20px,4vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(40px,6vw,96px);align-items:start">
+    <div data-reveal="" style="display:flex;flex-direction:column;gap:24px">
+      <p style="margin:0;display:flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#E52C18"><span style="width:6px;height:6px;border-radius:50%;background:#E52C18;display:block"></span>Consultoria online</p>
+      <h2 style="margin:0;font-size:clamp(40px,4.8vw,68px);font-weight:800;font-stretch:75%;line-height:.92;letter-spacing:-.02em;text-transform:uppercase;text-wrap:balance">O acompanhamento do Luiz onde você estiver</h2>
+      <p style="margin:0;font-size:15px;line-height:1.7;color:#948E89;max-width:480px;text-wrap:pretty">Para quem mora fora de Florianópolis, viaja com frequência ou prefere treinar no próprio horário. A orientação continua individual, com o mesmo cuidado com a técnica. Como vai funcionar para você, vocês combinam direto na conversa.</p>
+      <a href="https://wa.me/5547992754013?text=Ol%C3%A1!%20Vi%20o%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20acompanhamento%20com%20o%20Luiz." target="_blank" rel="noopener" style="align-self:flex-start;height:52px;padding:0 26px;background:#E52C18;color:#FFFFFF;display:flex;align-items:center;gap:12px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:.2s ease;margin-top:8px" style-hover="background:#F03922;color:#FFFFFF;transform:translateY(-2px)"><span>Quero a consultoria online</span><span>→</span></a>
+    </div>
+    <div data-reveal="" style="display:flex;flex-direction:column;border-top:1px solid #762219">
+      <div style="padding:28px 0;border-bottom:1px solid #282828;display:grid;grid-template-columns:48px minmax(0,1fr);gap:16px">
+        <span style="font-size:11px;font-weight:700;letter-spacing:.15em;color:#D73322;padding-top:6px">01</span>
+        <div><h3 style="margin:0;font-size:22px;font-weight:750;line-height:1.05;text-transform:uppercase">Presencial</h3><p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#948E89">No Centro de Florianópolis, com horário marcado.</p></div>
+      </div>
+      <div style="padding:28px 0;border-bottom:1px solid #282828;display:grid;grid-template-columns:48px minmax(0,1fr);gap:16px">
+        <span style="font-size:11px;font-weight:700;letter-spacing:.15em;color:#D73322;padding-top:6px">02</span>
+        <div><h3 style="margin:0;font-size:22px;font-weight:750;line-height:1.05;text-transform:uppercase">Ao ar livre</h3><p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#948E89">Treino fora da academia, quando faz sentido para o seu objetivo.</p></div>
+      </div>
+      <div style="padding:28px 0;border-bottom:1px solid #282828;display:grid;grid-template-columns:48px minmax(0,1fr);gap:16px">
+        <span style="font-size:11px;font-weight:700;letter-spacing:.15em;color:#D73322;padding-top:6px">03</span>
+        <div><h3 style="margin:0;font-size:22px;font-weight:750;line-height:1.05;text-transform:uppercase">Online</h3><p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#948E89">Consultoria para treinar com orientação do Luiz a distância.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO COMEÇAR -->
+<section id="como-comecar" data-screen-label="Como começar" style="background:#090909;padding:clamp(72px,10vw,128px) 0">
+  <div style="max-width:1380px;margin:0 auto;padding:0 clamp(20px,4vw,48px)">
+    <div data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:32px;align-items:end">
+      <div>
+        <p style="margin:0;display:flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#E52C18"><span style="width:6px;height:6px;border-radius:50%;background:#E52C18;display:block"></span>Como começar</p>
+        <h2 style="margin:16px 0 0;font-size:clamp(40px,4.8vw,68px);font-weight:800;font-stretch:75%;line-height:.92;letter-spacing:-.02em;text-transform:uppercase;text-wrap:balance">Do primeiro oi ao primeiro treino</h2>
+      </div>
+      <a href="https://wa.me/5547992754013?text=Ol%C3%A1!%20Vi%20o%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20acompanhamento%20com%20o%20Luiz." target="_blank" rel="noopener" style="justify-self:start;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#D93625;display:flex;gap:10px" style-hover="color:#F03922"><span>Chamar no WhatsApp</span><span>→</span></a>
+    </div>
+    <ol style="list-style:none;margin:56px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:24px">
+      <li data-reveal="" style="display:flex;flex-direction:column;gap:16px;padding-top:24px;border-top:1px solid #762219">
+        <span style="font-size:clamp(56px,6vw,88px);font-weight:300;letter-spacing:-.05em;line-height:.9;color:#E52C18">01</span>
+        <h3 style="margin:0;font-size:22px;font-weight:750;line-height:1.05;text-transform:uppercase">Chame no WhatsApp</h3>
+        <p style="margin:0;font-size:15px;line-height:1.65;color:#948E89;max-width:300px">Pelo botão do site a conversa já abre com uma mensagem pronta para o Luiz.</p>
+      </li>
+      <li data-reveal="" style="display:flex;flex-direction:column;gap:16px;padding-top:24px;border-top:1px solid #762219">
+        <span style="font-size:clamp(56px,6vw,88px);font-weight:300;letter-spacing:-.05em;line-height:.9;color:#E52C18">02</span>
+        <h3 style="margin:0;font-size:22px;font-weight:750;line-height:1.05;text-transform:uppercase">Conte seu objetivo</h3>
+        <p style="margin:0;font-size:15px;line-height:1.65;color:#948E89;max-width:300px">O que você busca, como é a sua rotina e se prefere presencial, ao ar livre ou online.</p>
+      </li>
+      <li data-reveal="" style="display:flex;flex-direction:column;gap:16px;padding-top:24px;border-top:1px solid #762219">
+        <span style="font-size:clamp(56px,6vw,88px);font-weight:300;letter-spacing:-.05em;line-height:.9;color:#E52C18">03</span>
+        <h3 style="margin:0;font-size:22px;font-weight:750;line-height:1.05;text-transform:uppercase">Marque seu horário</h3>
+        <p style="margin:0;font-size:15px;line-height:1.65;color:#948E89;max-width:300px">O atendimento é com horário marcado. Vocês definem juntos o melhor dia e horário.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato" data-screen-label="Contato" style="background:#0A0A0A;padding:clamp(72px,10vw,128px) 0;border-top:1px solid #1C1C1C">
+  <div style="max-width:1380px;margin:0 auto;padding:0 clamp(20px,4vw,48px)">
+    <div data-reveal="">
+      <p style="margin:0;display:flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#E52C18"><span style="width:6px;height:6px;border-radius:50%;background:#E52C18;display:block"></span>Localização e contato</p>
+      <h2 style="margin:16px 0 0;font-size:clamp(40px,4.8vw,68px);font-weight:800;font-stretch:75%;line-height:.92;letter-spacing:-.02em;text-transform:uppercase;text-wrap:balance">Onde encontrar o Luiz</h2>
+    </div>
+    <div style="margin-top:48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:0">
+      <div data-reveal="" style="background:#111111;padding:34px;display:flex;flex-direction:column;gap:16px;border-right:1px solid #29201E">
+        <span style="font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#D73322">Endereço</span>
+        <span style="height:1px;background:#612219;display:block"></span>
+        <address style="font-style:normal;font-size:20px;line-height:1.35;font-weight:500">R. Francisco Tolentino, 800<br>Centro, Florianópolis, SC<br>88010-200</address>
+        <p style="margin:0;font-size:14px;line-height:1.6;color:#948E89">Condomínio do Edifício Residencial Mirante do Cais</p>
+      </div>
+      <div data-reveal="" style="background:#111111;padding:34px;display:flex;flex-direction:column;gap:16px;border-right:1px solid #29201E">
+        <span style="font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#D73322">Horários, com agendamento</span>
+        <span style="height:1px;background:#612219;display:block"></span>
+        <dl style="margin:0;display:grid;grid-template-columns:auto auto;justify-content:space-between;row-gap:12px;column-gap:24px;font-size:15px">
+          <dt style="color:#948E89">Segunda a quinta</dt><dd style="margin:0;font-weight:600;text-align:right">05:30 às 23:00</dd>
+          <dt style="color:#948E89">Sexta</dt><dd style="margin:0;font-weight:600;text-align:right">05:00 às 23:00</dd>
+          <dt style="color:#948E89">Sábado</dt><dd style="margin:0;font-weight:600;text-align:right">08:00 às 20:00</dd>
+          <dt style="color:#948E89">Domingo</dt><dd style="margin:0;font-weight:600;text-align:right">08:00 às 20:00</dd>
+        </dl>
+      </div>
+      <div data-reveal="" style="background:#E52C18;padding:34px;display:flex;flex-direction:column;gap:16px;min-height:300px">
+        <span style="font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#FFFFFF">Fale com o Luiz</span>
+        <span style="height:1px;background:rgba(255,255,255,.3);display:block"></span>
+        <p style="margin:0;font-size:clamp(28px,2.6vw,36px);font-weight:800;font-stretch:75%;line-height:.98;letter-spacing:-.02em;text-transform:uppercase;color:#FFFFFF">Conte seu objetivo e combine o primeiro horário</p>
+        <div style="margin-top:auto;display:flex;gap:12px;flex-wrap:wrap">
+          <a href="https://wa.me/5547992754013?text=Ol%C3%A1!%20Vi%20o%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20acompanhamento%20com%20o%20Luiz." target="_blank" rel="noopener" style="flex:1;min-width:200px;height:52px;padding:0 20px;background:#0A0A0A;color:#FFFFFF;display:flex;align-items:center;justify-content:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:.2s ease" style-hover="color:#FFFFFF;transform:translateY(-2px)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
+            <span>WhatsApp</span>
+          </a>
+          <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram do Luiz Savoldi" style="width:52px;height:52px;border:1px solid rgba(255,255,255,.45);display:flex;align-items:center;justify-content:center;color:#FFFFFF" style-hover="color:#FFFFFF;background:rgba(0,0,0,.15)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer style="background:#050505;border-top:1px solid #1C1C1C">
+  <div style="max-width:1380px;margin:0 auto;padding:40px clamp(20px,4vw,48px) {{ footerPadBottom }};display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px">
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <span style="font-size:15px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;display:flex;gap:6px"><span>Luiz</span><span style="color:#E52C18">Savoldi</span></span>
+      <span style="font-size:12px;color:#625D59">Personal trainer em Florianópolis</span>
+    </div>
+    <span style="font-size:12px;color:#625D59">© 2026 Luiz Savoldi</span>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP (desktop) -->
+<sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+  <a href="https://wa.me/5547992754013?text=Ol%C3%A1!%20Vi%20o%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20acompanhamento%20com%20o%20Luiz." target="_blank" rel="noopener" aria-label="Conversar com o Luiz no WhatsApp" style="position:fixed;right:28px;bottom:28px;z-index:50;width:60px;height:60px;border-radius:50%;background:#25D366;color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 20px 60px rgba(0,0,0,.35);transition:.2s ease" style-hover="color:#FFFFFF;transform:translateY(-2px)">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
+  </a>
+</sc-if>
+
+<!-- FIXED MOBILE CTA -->
+<sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;left:0;right:0;bottom:0;z-index:50;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:#0A0A0A;border-top:1px solid #1C1C1C">
+    <a href="https://wa.me/5547992754013?text=Ol%C3%A1!%20Vi%20o%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20acompanhamento%20com%20o%20Luiz." target="_blank" rel="noopener" aria-label="Quero treinar com o Luiz, abrir WhatsApp" style="height:52px;background:#E52C18;color:#FFFFFF;display:flex;align-items:center;justify-content:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
+      <span>Quero treinar com o Luiz</span>
+    </a>
+  </div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1280, scrolled: false, menuOpen: false };
+  componentDidMount() {
+    this.onResize = () => { const w = document.documentElement.clientWidth || window.innerWidth; if (w !== this.state.w) this.setState({ w }); };
+    this.onScroll = () => { const s = window.scrollY > 40; if (s !== this.state.scrolled) this.setState({ scrolled: s }); };
+    window.addEventListener('resize', this.onResize);
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+    this.onResize();
+    this.mq = window.matchMedia('(max-width: 819px)');
+    this.mq.addEventListener && this.mq.addEventListener('change', this.onResize);
+    requestAnimationFrame(this.onResize);
+    setTimeout(this.onResize, 150);
+    setTimeout(this.onResize, 600);
+    window.addEventListener('load', this.onResize);
+    if ('ResizeObserver' in window) { this.ro = new ResizeObserver(this.onResize); this.ro.observe(document.body); }
+    setTimeout(() => this.setupReveal(), 50);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('scroll', this.onScroll);
+    this.io && this.io.disconnect();
+    this.ro && this.ro.disconnect();
+    this.mq && this.mq.removeEventListener && this.mq.removeEventListener('change', this.onResize);
+    window.removeEventListener('load', this.onResize);
+  }
+  setupReveal() {
+    if (!('IntersectionObserver' in window)) return;
+    const ease = 'cubic-bezier(.22,.61,.36,1)';
+    this.io = new IntersectionObserver(entries => entries.forEach(e => {
+      if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'none'; this.io.unobserve(e.target); }
+    }), { threshold: 0.1 });
+    document.querySelectorAll('[data-reveal]').forEach(el => {
+      if (el.getBoundingClientRect().top < window.innerHeight) return;
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = `opacity .5s ${ease}, transform .5s ${ease}`;
+      this.io.observe(el);
+    });
+  }
+  setMenu(open) {
+    this.setState({ menuOpen: open });
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  renderVals() {
+    const isMobile = window.matchMedia('(max-width: 819px)').matches;
+    this._lastMobile = isMobile;
+    if (!this._poll) {
+      this._poll = true;
+      const check = () => { if (window.matchMedia('(max-width: 819px)').matches !== this._lastMobile) this.forceUpdate(); };
+      window.addEventListener('resize', check);
+      const mq = window.matchMedia('(max-width: 819px)');
+      mq.addEventListener && mq.addEventListener('change', check);
+      let n = 0; const iv = setInterval(() => { check(); if (++n > 20) clearInterval(iv); }, 150);
+    }
+    return {
+      isMobile, isDesktop: !isMobile,
+      menuOpen: this.state.menuOpen && isMobile,
+      openMenu: () => this.setMenu(true),
+      closeMenu: () => this.setMenu(false),
+      headerH: isMobile ? '64px' : '76px',
+      headerBg: this.state.scrolled ? 'rgba(10,10,10,.94)' : 'transparent',
+      footerPadBottom: isMobile ? '110px' : '40px'
+    };
+  }
+}
+</script>
+</body>
+</html>
